@@ -23,7 +23,7 @@ public class primeiraTela extends JFrame {
     public primeiraTela(){
         setContentPane(mainPanel);
         setTitle("Calculadora");
-        setSize(386,134);
+        setSize(600,300);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         sairButton.addActionListener(new ActionListener() {
@@ -40,26 +40,48 @@ public class primeiraTela extends JFrame {
                     num2 = Integer.parseInt(tfNumero2.getText());
                     lblResult.setText("Resultado: "+(num1+num2));
                 }
-                else if (rdnSubt.isSelected()){
+            }
+        });
+        rdnSubt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (rdnSubt.isSelected()) {
                     num1 = Integer.parseInt(tfNumero1.getText());
                     num2 = Integer.parseInt(tfNumero2.getText());
-                    lblResult.setText("Resultado: "+(num1-num2));
+                    lblResult.setText("Resultado: " + (num1 - num2));
                 }
-                else if (rdnDiv.isSelected()){
+            }
+        });
+
+        rdnDiv.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (rdnDiv.isSelected()){
                     num1 = Integer.parseInt(tfNumero1.getText());
                     num2 = Integer.parseInt(tfNumero2.getText());
                     lblResult.setText("Resultado: "+(num1/num2));
                 }
-                else if (rdnMulti.isSelected()){
-                    num1 = Integer.parseInt(tfNumero1.getText());
-                    num2 = Integer.parseInt(tfNumero2.getText());
-                    lblResult.setText("Resultado: "+(num1*num2));
+            }
+        });
 
-                }
-                else if (rdnPow.isSelected()){
+        rdnMulti.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               if (rdnMulti.isSelected()) {
+                   num1 = Integer.parseInt(tfNumero1.getText());
+                   num2 = Integer.parseInt(tfNumero2.getText());
+                   lblResult.setText("Resultado: " + (num1 * num2));
+               }
+            }
+        });
+
+        rdnPow.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (rdnPow.isSelected()) {
                     num1 = Integer.parseInt(tfNumero1.getText());
                     num2 = Integer.parseInt(tfNumero2.getText());
-                    lblResult.setText("Resultado: "+(Math.pow(num1,num2)));
+                    lblResult.setText("Resultado: " + (Math.pow(num1, num2)));
                 }
             }
         });
